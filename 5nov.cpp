@@ -145,7 +145,7 @@ int main()
 }
 */ 
 // this  operator  ==> current  class object
-
+/*
 #include <iostream>
 using namespace std;
 class employees 
@@ -172,5 +172,83 @@ int main()
     return 0;
 
 }
+*/
 
-// task  :1 
+/*
+// copy  constrcutor  : 
+
+#include<iostream> 
+using namespace std;
+class student
+{
+    private : 
+        string name ;
+        int age ; 
+    public : 
+        student(string  n , int a)
+        {
+            name =n;
+            age =a;
+        }
+        student(const student &obj)
+        {
+            name = obj.name; 
+            age =obj.age; 
+        }
+        void  display()
+        {
+            cout<<"name : "<<name<<" age : "<<age<<endl;
+        }
+};
+
+int main()
+{
+    student s1("manush",20);
+    student s2=s1;// copy constructor called 
+    s2.display(); 
+    return 0;
+}
+*/ 
+
+// constructor overloading  : multiple constructor with same name but different parameters.
+
+#include<iostream> 
+using namespace std;
+class student
+{
+    private :
+        int roll; 
+        string name; 
+    public : 
+        student()
+        {
+            roll =0; 
+            name ="unknown";
+        }
+        student(int r , string n)
+        {
+            roll =r; 
+            name =n;
+        }
+        student(const student &obj)
+        {
+            roll = obj.roll;
+            name = obj.name;
+        }
+        void display()
+        {
+            cout<<"roll : "<<roll<<" name : "<<name<<endl;
+        }
+};
+
+int main()
+{
+    student s1;   // default constructor called
+    student s2(1,"manush"); // parameterized constructor called
+    student s3=s2; // copy constructor called
+
+    s1.display();
+    s2.display();
+    s3.display();
+    return 0;
+}
