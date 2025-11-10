@@ -36,6 +36,7 @@ int main()
 */
 // using  constructor   + private  + base class constructor called in derived class :
 
+/*
 #include <iostream>
 using namespace std;
 
@@ -82,4 +83,91 @@ int main()
     c.display();
     // c.show();
     return 0; 
+}
+*/ 
+
+// protetced  data member
+
+/*
+#include <iostream>
+using namespace std;
+class student
+{
+    protected : 
+        string name; 
+        int age; 
+    public : 
+        student(string n,int a)
+        {
+            name =n; 
+            age =a; 
+        }
+};
+
+class person : public student
+{
+    private  : 
+        int rollno; 
+
+    public : 
+        person(string n,int a,int r) : student(n,a) 
+        {
+            rollno =r;
+        } 
+    void show()
+    {
+        cout<<"name : "<<name<<"\n";
+        cout<<"age : "<<age<<"\n";
+        cout<<"rollno : "<<rollno<<"\n";
+    }
+
+};
+
+int main()
+{
+    person p("john",20,100);
+    p.show();
+    return 0;
+}
+
+*/ 
+
+#include <iostream>
+using namespace std;
+class person 
+{
+    protected:
+        string name ; 
+        int age; 
+
+};
+class student : public person
+{
+    private : 
+        int rollno; 
+    public : 
+        void inputdata()
+        {
+            cout<<"enter name : "; // direct access of name and age  bcz of  protected
+            cin>>name; 
+            cout<<"enter age : ";
+            cin>>age;
+            cout<<"enter rollno : ";
+            cin>>rollno;
+        
+        }
+        void show()
+        {
+            cout<<"rollno : "<<rollno<<"\n";
+            cout<<"name : "<<name<<"\n";
+            cout<<"age : "<<age<<"\n";
+        }
+};
+
+int main()
+{
+    student s; 
+    s.inputdata();
+    s.show();
+    return 0;
 }
