@@ -15,9 +15,9 @@ class d (b,c)
         ===> class a appears twice in d 
 */
 
+/*
 #include <iostream>
 using namespace std;
-
 class vehicle 
 {
     private  : 
@@ -87,4 +87,55 @@ int main()
     t.show(); 
 
     return 0;
+}
+*/ 
+
+/*
+
+encapsulation  :  
+
+1. get method :  data print 
+2. set method :  new value  set  
+*/
+
+#include <iostream>
+using namespace std;
+class person 
+{
+    private  :   
+        string name; 
+        int age; 
+    public : 
+        person(string n,int a)
+        {
+            name =n;
+            age =a; 
+        }
+        string get_name()
+        {
+            return name; 
+        }
+        int get_age()
+        {
+            return age; 
+        }
+        int set_age(int new_age)
+        {
+            age =new_age; 
+        }
+};
+int main()
+{
+    person p("john",20);
+    cout<<"before using set method : "<<endl;
+    cout<<"name : "<<p.get_name()<<endl; 
+    cout<<"age : "<<p.get_age()<<endl; 
+    
+    cout<<"after using set method : "<<endl;
+
+    p.set_age(28); 
+    cout<<"age : "<<p.get_age()<<endl; 
+
+    return 0;
+
 }
